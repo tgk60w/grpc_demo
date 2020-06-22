@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+
+package protos;
+
+service Transfer {
+    //stream  设定grpc模式
+    rpc WebRequest ( WebJson) returns (stream WebJson) {
+    }
+    rpc ReturnData ( WebJson) returns ( WebJson) {
+    }
+}
+
+
+message WebJson {
+    bytes data = 1;
+    string id = 2;
+}
+
